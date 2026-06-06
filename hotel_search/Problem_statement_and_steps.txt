@@ -1,0 +1,5 @@
+Problem Statement: We will build a simple Django-based hotel search app that lets users dynamically sort and filter hotels by price. Using 
+                   Django for the backend and Vue.js for the frontend, we’ll create an interactive interface where users can instantly view 
+                   hotels sorted in ascending or descending order and filter by maximum price, all without page reloads.
+
+
