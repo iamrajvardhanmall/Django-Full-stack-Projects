@@ -35,9 +35,9 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="customRange3" class="form-label"><strong>Select Price</strong></label>
-                <input type="range" class="form-range" @change="priceChange($event)" min="1000" max="10000" step="100"
-                    id="customRange3">
+                <label for="priceInput" class="form-label"><strong>Max Price (Rs.)</strong></label>
+                <input type="number" class="form-control" v-model.number="selectedPrice" @change="priceChange($event)" 
+                    min="1000" max="10000" placeholder="Enter price" id="priceInput">
             </div>
         </div>
         <div class="row mt-5 pt-5">
@@ -64,7 +64,8 @@
             data: {
                 message: 'Hello Django Hotel App!',
                 hotels: [],
-                selectedSort: 'asc', // Default sorting option
+                selectedSort: 'asc',
+                selectedPrice: 10000,
             },
             methods: {
                 getGFG(sort = '', amount = '') {
@@ -77,10 +78,10 @@
                         });
                 },
                 sortBy(e) {
-                    this.getGFG(sort = this.selectedSort);
+                    this.getGFG(this.selectedSort, this.selectedPrice);
                 },
                 priceChange(e) {
-                    this.getGFG(' ', amount = e.target.value, ' ');
+                    this.getGFG(this.selectedSort, this.selectedPrice);
                 },
  
             },
